@@ -1,0 +1,257 @@
+@use '../../styles/mixins.scss' as globalStyles;
+
+.profile-section {
+	@include globalStyles.tabs;
+	@include globalStyles.form-style;
+	@include globalStyles.form-react-select;
+	gap: 30px;
+
+	.read-only {
+		background: #fef0f0;
+	}
+
+	.edit-btn {
+		i {
+			font-size: 20px;
+			color: #e73232;
+			&:hover {
+				color: #0a0000;
+			}
+		}
+	}
+
+	&-title {
+		color: #0a0000;
+		font-size: 26px;
+		font-weight: 800;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+
+		.back-arrow {
+			cursor: pointer;
+			color: #0a0000;
+			text-decoration: none;
+		}
+	}
+
+	.subheading {
+		color: #0a0000;
+		font-size: 22px;
+		font-weight: 700;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	&-details {
+		border-radius: 8px;
+		background: #fff;
+
+		.banner {
+			height: 250px;
+			object-fit: cover;
+			border: 1px solid #f3f3f3;
+			border-radius: 8px 8px 0px 0px;
+
+			.spinner-border {
+				position: absolute;
+				top: 40%;
+				left: 50%;
+			}
+		}
+
+		.cover-image {
+			height: 250px;
+			object-fit: cover;
+			border-radius: 8px 8px 0px 0px;
+		}
+
+		.edit-icon {
+			border-radius: 64px;
+			background: rgba(255, 255, 255, 0.5);
+			backdrop-filter: blur(12px);
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			width: 50px;
+			height: 50px;
+			padding: 15px;
+
+			input[type='file'] {
+				position: absolute;
+				opacity: 0;
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+				right: 0px;
+			}
+
+			i {
+				font-size: 20px;
+				color: #fff;
+			}
+		}
+
+		.user-profile {
+			width: 180px;
+			height: 180px;
+			margin-top: -100px;
+			left: 30px;
+			border: 2px solid #fff;
+			background: #f8f8f8;
+
+			.spinner-border {
+				position: absolute;
+				top: 40%;
+				left: 40%;
+			}
+		}
+
+		.input-files {
+			position: absolute;
+			padding: 10px;
+			width: 50px;
+			height: 50px;
+			top: 50%;
+			right: -25px;
+			border-radius: 64px;
+			background: #e73232;
+			transform: translateY(-50%);
+			cursor: pointer;
+
+			input[type='file'] {
+				position: absolute;
+				opacity: 0;
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+			}
+
+			i {
+				font-size: 24px;
+				color: #fff;
+			}
+		}
+
+		&-content {
+			gap: 30px;
+
+			.icon {
+				border-radius: 44px;
+				border: 1px solid #ffeded;
+				background: #fff;
+				padding: 15px;
+				width: 50px;
+				height: 50px;
+
+				i {
+					font-size: 20px;
+					color: #e73232;
+				}
+			}
+
+			.title {
+				color: #676666;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 24px;
+				font-family: 'Manrope', sans-serif;
+			}
+
+			.subtitle {
+				color: #0a0000;
+				font-size: 16px;
+				font-weight: 600;
+				line-height: 24px;
+				font-family: 'Manrope', sans-serif;
+			}
+		}
+	}
+
+	.form-react-select {
+		&.phone {
+			top: 2.2rem;
+		}
+	}
+
+	.white-box {
+		border-radius: 8px;
+		background: #fff;
+		padding: 30px;
+		gap: 30px;
+	}
+
+	.eye-view {
+		position: absolute;
+		right: 1rem;
+		top: 0.8rem;
+	}
+
+	&-faq {
+		&-display {
+			.title {
+				color: #0a0000;
+				font-size: 16px;
+				font-weight: 600;
+				line-height: 24px;
+				font-family: 'Manrope', sans-serif;
+			}
+
+			.description {
+				color: #676666;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 24px;
+				font-family: 'Manrope', sans-serif;
+			}
+		}
+	}
+
+	.profile-dropdown {
+		.dropdown-toggle {
+			i {
+				font-size: 24px;
+				color: #676666;
+			}
+
+			&::after {
+				display: none;
+			}
+		}
+
+		&-menu {
+			border-radius: 8px;
+			padding: 10px;
+			background: #fff;
+			box-shadow: 0px 4px 15px 0px rgba(200, 200, 200, 0.4);
+			border: none;
+			width: 220px;
+
+			.dropdown-item {
+				padding: 10px;
+				color: #0a0000;
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 24px;
+				border-bottom: 1px solid #f3f3f3;
+				font-family: 'Manrope', sans-serif;
+
+				&:hover {
+					background: #e73232;
+					color: #fff;
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	.resume-input {
+		.spinner-border {
+			position: absolute;
+			right: 10px;
+			top: 40px;
+		}
+	}
+}

@@ -1,0 +1,203 @@
+body {
+	font-family: 'Manrope', sans-serif !important;
+	background: #f9f9f9 !important;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('/src/assets/fonts/Manrope-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('/src/assets/fonts/Manrope-Light.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('/src/assets/fonts/Manrope-Medium.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('/src/assets/fonts/Manrope-SemiBold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('/src/assets/fonts/Manrope-Bold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+}
+
+.p-top {
+	padding-top: 70px;
+}
+
+.pt-30 {
+	padding-top: 20px;
+}
+
+.main-subtitle {
+	color: #0a0000;
+	font-size: 26px;
+	font-weight: 800;
+	line-height: normal;
+	font-family: 'Manrope', sans-serif;
+}
+
+.small-title {
+	color: #e73232;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: normal;
+	font-family: 'Manrope', sans-serif;
+}
+
+.main-heading {
+	color: #0a0000;
+	font-size: 40px;
+	font-weight: 800;
+	line-height: normal;
+	font-family: 'Manrope', sans-serif;
+}
+
+.main-description {
+	color: #676666;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: normal;
+	font-family: 'Manrope', sans-serif;
+}
+
+.view-link {
+	color: #0a0000;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: normal;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	background-image: linear-gradient(to right, #e73232, #e73232 50%, #000 50%);
+	background-size: 200% 100%;
+	background-position: -100%;
+	padding: 5px 0;
+	position: relative;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+	font-family: 'Manrope', sans-serif;
+
+	&:hover {
+		background-position: 0;
+	}
+}
+.react-datepicker-wrapper {
+	width: 100%;
+}
+.react-datepicker-popper {
+	z-index: 9 !important;
+}
+.react-datepicker__calendar-icon {
+	top: 10px;
+	right: 10px;
+	position: absolute;
+}
+.react-datepicker__navigation--years-previous {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z'%3E%3C/path%3E%3C/svg%3E") !important;
+	top: 2px;
+}
+.react-datepicker__navigation--years-upcoming {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.pb-70 {
+	padding-bottom: 40px;
+}
+
+.pb-100 {
+	padding-bottom: 70px;
+}
+
+.flex-1 {
+	flex: 1;
+}
+.f-error {
+	font-size: 14px;
+}
+.inner-page-static {
+	min-height: 100vh;
+	padding: 50px 0px;
+}
+.white-box {
+	border-radius: 8px;
+	background: #fff;
+	padding: 30px;
+}
+.back-arrow {
+	cursor: pointer;
+	&:hover {
+		color: #e73232;
+	}
+}
+.no-result-img {
+	max-width: 300px;
+	margin: 0 auto;
+}
+.tooltip-inner {
+	border-radius: 4px !important;
+	background: var(--Title, #0a0000);
+	box-shadow: 2.065px 2.065px 18.581px 0px rgba(0, 0, 0, 0.04);
+	padding: 9px 10px !important;
+	color: #fff !important;
+	font-family: 'Manrope', sans-serif;
+	font-size: 11px;
+	font-weight: 400;
+	line-height: normal;
+}
+.ql-align-justify {
+	color: #676666;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: normal;
+	font-family: 'Manrope', sans-serif;
+	margin-bottom: 0px;
+}
+
+@media (max-width: 991px) {
+	.main-subtitle {
+		font-size: 20px;
+	}
+	.main-heading {
+		font-size: 28px;
+	}
+	.p-top {
+		padding-top: 50px;
+	}
+	.pb-100 {
+		padding-bottom: 50px;
+	}
+	.mb-30 {
+		margin-bottom: 15px;
+	}
+	.white-box {
+		padding: 16px;
+	}
+}

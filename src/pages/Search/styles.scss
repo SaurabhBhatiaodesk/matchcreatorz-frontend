@@ -1,0 +1,236 @@
+@use '../../styles/mixins.scss' as globalStyles;
+
+.search-jobs-page {
+	.filter-section {
+		.filter-title {
+			border-radius: 8px 8px 0px 0px;
+			background: #fff;
+			padding: 20px;
+
+			h6 {
+				color: #0a0000;
+				font-size: 20px;
+				font-weight: 700;
+				line-height: normal;
+				margin-bottom: 0px;
+				font-family: 'Manrope', sans-serif;
+			}
+		}
+
+		.all-filters {
+			border-radius: 0px 0px 8px 8px;
+			background: #fff;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	.selected-filters {
+		.filter-tag {
+			border: 1px solid #000;
+			border-radius: 50px;
+			padding: 5px 10px;
+			min-width: 50px;
+			text-align: center;
+			color: #696969;
+			cursor: pointer;
+
+			button {
+				i {
+					font-size: 20px;
+				}
+			}
+
+			&:hover {
+				background-color: #e73232;
+				border: 1px solid #e73232;
+				color: #fff;
+
+				button {
+					i {
+						color: #fff;
+					}
+				}
+			}
+		}
+
+		.clear-text {
+			color: #0a0000;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+
+	.search-title {
+		color: #0a0000;
+		font-size: 26px;
+		font-weight: 800;
+		line-height: normal;
+		margin-bottom: 30px;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	.search-subtitle {
+		color: #0a0000;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+		margin-bottom: 30px;
+		font-family: 'Manrope', sans-serif;
+
+		span {
+			color: #676666;
+		}
+	}
+
+	.search-tabs {
+		@include globalStyles.tabs;
+
+		.nav-tabs {
+			gap: 16px;
+		}
+	}
+
+	.search-seller-card {
+		cursor: pointer;
+		min-height: 205px;
+
+		.heart-icon {
+			border-radius: 44px;
+			background: #fff;
+			padding: 10px;
+			width: 42px;
+			height: 42px;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			border: 1px solid #f3f3f3;
+			cursor: pointer;
+
+			i {
+				&.not-fill {
+					color: #0a0000;
+					font-size: 20px;
+				}
+
+				&.fill {
+					color: rgb(231, 50, 50);
+					font-size: 20px;
+				}
+			}
+		}
+	}
+
+	.price-dropdown {
+		border-radius: 6px;
+		background: #fff;
+		padding: 16px;
+		color: #0a0000;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+		border: none;
+		font-family: 'Manrope', sans-serif;
+
+		&:active {
+			background: #fff;
+			color: #0a0000;
+		}
+	}
+
+	@include globalStyles.form-react-select;
+
+	.dropdown-text {
+		color: #0a0000;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	@include globalStyles.common-box;
+
+	.no-result {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+		color: #0a0000;
+		font-family: 'Manrope', sans-serif;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+	.search-jobs-page {
+		.search-tabs {
+			.nav-link {
+				padding: 12px 20px !important;
+				font-size: 14px !important;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+	.search-jobs-page {
+		.search-tabs {
+			.nav-link {
+				padding: 8px 10px !important;
+				font-size: 14px !important;
+				white-space: nowrap;
+			}
+		}
+	}
+
+	.filter-section {
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 991px) {
+	.filter-icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		border: 2px solid #e73232;
+		padding: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		i {
+			font-size: 20px;
+		}
+	}
+
+	.search-jobs-page {
+		.search-title {
+			font-size: 24px;
+		}
+
+		.search-tabs {
+			flex-direction: column;
+			gap: 16px;
+			align-items: flex-start !important;
+
+			.nav-tabs {
+				gap: 8px !important;
+			}
+
+			.nav-link {
+				padding: 8px 10px !important;
+				font-size: 14px !important;
+			}
+		}
+
+		.common-card {
+			.secondary-btn,
+			.primary-btn {
+				max-width: 134px;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+export { default as Faq } from './Faq';
+export { default as AddFaq } from './Faq/AddFaq';
+export { default as FaqHeader } from './Faq/FaqHeader';
+export { default as FaqStep1 } from './Faq/FaqStep1';
+export { default as FaqStep2 } from './Faq/FaqStep2';
+export { default as Portfolio } from './Portfolio';
+export { default as AddPortfolio } from './Portfolio/AddPortfolio';
+export { default as DeletePortfolio } from './Portfolio/DeletePortfolio';
+export { default as PortfolioHeader } from './Portfolio/PortfolioHeader';
+export { default as PortfolioStep1 } from './Portfolio/PortfolioStep1';
+export { default as PortfolioStep2 } from './Portfolio/PortfolioStep2';
+export { default as Profile } from './Profile';

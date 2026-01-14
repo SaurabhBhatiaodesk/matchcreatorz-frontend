@@ -1,0 +1,438 @@
+@use '../styles/mixins.scss' as globalStyles;
+
+.seller-profile-details,
+.service-detail {
+	gap: 30px;
+
+	&-box {
+		border-radius: 8px;
+		background: #fff;
+	}
+
+	.banner-image {
+		height: 250px;
+		object-fit: cover;
+		border-radius: 8px 8px 0px 0px;
+	}
+
+	.profile-content {
+		padding: 30px;
+		gap: 20px;
+
+		&-img {
+			border-radius: 4px;
+			width: 180px;
+			height: 180px;
+			object-fit: cover;
+		}
+
+		&-name {
+			color: #0a0000;
+			font-size: 36px;
+			font-weight: 500;
+			line-height: normal;
+			margin-bottom: 0px;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&-rating {
+			border-radius: 4px;
+			background: rgba(255, 153, 0, 0.1);
+			backdrop-filter: blur(50px);
+			padding: 5px 14px 5px 10px;
+			color: #0a0000;
+			font-size: 16px;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+
+			i {
+				font-size: 20px;
+				color: #ff9900;
+				margin-right: 10px;
+			}
+		}
+
+		&-designation {
+			color: #e73232;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 24px;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&-location {
+			color: #0a0000;
+			font-size: 16px;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&-btn {
+			border-radius: 6px;
+			border: 1px solid #e73232;
+			background: #fff;
+			padding: 16px 40px;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: normal;
+			color: #0a0000;
+			font-family: 'Manrope', sans-serif;
+
+			&.one {
+				border: 1px solid #f3f3f3;
+
+				&.disabled {
+					pointer-events: none;
+					opacity: 0.5;
+				}
+			}
+
+			&.three {
+				background: #e73232;
+				color: #fff;
+
+				&.disabled {
+					pointer-events: none;
+					opacity: 0.5;
+				}
+			}
+
+			&:hover {
+				background: #0a0000;
+				color: #fff;
+				border: 1px solid #0a0000;
+
+				.heart-icon {
+					i.not-fill {
+						color: #fff;
+					}
+				}
+			}
+
+			.heart-icon {
+				padding: 0px;
+				background: transparent;
+				top: 15px;
+				width: unset;
+				height: unset;
+				right: unset;
+				left: 10px;
+			}
+		}
+	}
+
+	.white-box {
+		border-radius: 8px;
+		background: #fff;
+		padding: 30px;
+
+		.section-headings {
+			color: #0a0000;
+			font-size: 22px;
+			font-weight: 700;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+
+	.resume-section {
+		&-title {
+			color: #676666;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 24px;
+			font-family: 'Manrope', sans-serif;
+
+			i {
+				color: #0a0000;
+				font-size: 20px;
+			}
+		}
+
+		&-btn {
+			border-radius: 6px;
+			background: #ffeded;
+			padding: 6px 20px;
+			color: #e73232;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 24px;
+			font-family: 'Manrope', sans-serif;
+			border: none;
+
+			i {
+				font-size: 20px;
+			}
+		}
+	}
+
+	.testimonial-section {
+		&-img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50px;
+			object-fit: cover;
+		}
+
+		&-name {
+			color: #0a0000;
+			font-size: 18px;
+			font-weight: 600;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&-rating {
+			i {
+				font-size: 20px;
+				color: #ff9900;
+			}
+		}
+
+		&-date {
+			color: #0a0000;
+			font-size: 14px;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&-description {
+			color: #676666;
+			font-size: 16px;
+			line-height: 24px;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+
+	.view-btn {
+		border-radius: 60px;
+		border: 1px solid #e73232;
+		background: #fff;
+		box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.05);
+		padding: 14px 30px;
+		text-align: center;
+		color: #0a0000;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+		width: 100%;
+		max-width: 130px;
+		margin: 0 auto;
+		font-family: 'Manrope', sans-serif;
+
+		&:hover {
+			background: #e73232;
+			color: #fff;
+		}
+	}
+
+	@include globalStyles.accordion;
+
+	&-content {
+		&-title {
+			color: #0a0000;
+			font-size: 28px;
+			font-weight: 700;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&-id,
+		&-designation {
+			color: #0a0000;
+			font-size: 16px;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&-location {
+			color: #676666;
+			font-size: 16px;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+
+	.image-display {
+		overflow-x: auto;
+
+		img {
+			width: 140px;
+			height: 140px;
+			border-radius: 4px;
+			object-fit: cover;
+		}
+	}
+
+	.seller-profile {
+		gap: 20px;
+
+		&-img {
+			width: 60px;
+			height: 60px;
+			border-radius: 4px;
+			object-fit: cover;
+			border: 1px solid #f3f3f3;
+		}
+
+		&-name {
+			color: #0a0000;
+			font-size: 20px;
+			font-weight: 600;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&-rating {
+			border-radius: 4px;
+			background: rgba(255, 153, 0, 0.1);
+			backdrop-filter: blur(50px);
+			padding: 5px 14px 5px 10px;
+			color: #0a0000;
+			font-size: 16px;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+
+			i {
+				font-size: 20px;
+				color: #ff9900;
+				margin-right: 10px;
+			}
+		}
+
+		&-designation {
+			color: #e73232;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 24px;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&-location {
+			color: #0a0000;
+			font-size: 16px;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+
+	.seller-information {
+		gap: 30px;
+
+		&-heading {
+			color: #0a0000;
+			font-size: 22px;
+			font-weight: 700;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.custom-badges {
+			border-radius: 4px;
+			background: #ffeded;
+			backdrop-filter: blur(50px);
+			-webkit-backdrop-filter: blur(50px);
+			color: #0a0000;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: normal;
+			padding: 10px;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.description {
+			color: #676666;
+			font-size: 16px;
+			line-height: 24px;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.subtitle {
+			color: #0a0000;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+
+			i {
+				font-size: 20px;
+			}
+		}
+	}
+
+	@include globalStyles.common-box;
+}
+
+.seller-chat-modal {
+	.modal-body {
+		padding: 30px;
+
+		.form-control {
+			border-radius: 6px;
+			border: 1px solid #f3f3f3;
+			background: #fff;
+			padding: 16px 28px;
+			color: #676666;
+			font-size: 16px;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+
+			&:focus {
+				box-shadow: none;
+			}
+		}
+	}
+
+	&-title {
+		color: #0a0000;
+		font-size: 26px;
+		font-weight: 800;
+		line-height: normal;
+		margin-bottom: 30px;
+		font-family: 'Manrope', sans-serif;
+	}
+}
+
+@media (max-width: 991px) {
+	.seller-profile-details,
+	.service-detail {
+		.profile-content {
+			flex-direction: column;
+
+			&-name {
+				font-size: 28px;
+			}
+
+			&-btn {
+				padding: 16px 25px;
+			}
+		}
+
+		.resume-section {
+			flex-direction: column;
+			gap: 16px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.seller-profile-details,
+	.service-detail {
+		.white-box {
+			padding: 16px;
+		}
+
+		&-content {
+			&-title {
+				font-size: 24px;
+			}
+		}
+
+		.image-display {
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}

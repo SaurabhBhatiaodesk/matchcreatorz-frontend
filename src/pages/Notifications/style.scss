@@ -1,0 +1,49 @@
+.notification-box {
+	border-radius: 6px;
+	background: #fff;
+	padding: 30px;
+	min-height: 60dvh;
+
+	&-content {
+		border-bottom: 1px solid #ffeded;
+		padding: 25px 0px;
+		gap: 20px;
+		cursor: pointer;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&-icon {
+			border-radius: 72px;
+			background: #f9f9f9;
+			width: 60px;
+			height: 60px;
+			min-width: 60px;
+			max-width: 60px;
+
+			img {
+				width: 24px;
+				height: 24px;
+				border-radius: 100%;
+			}
+		}
+
+		&-text {
+			color: #0a0000;
+			font-family: 'Manrope', sans-serif;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: normal;
+			word-break: break-all;
+		}
+
+		&-date {
+			color: #676666;
+			font-family: 'Manrope', sans-serif;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: normal;
+		}
+	}
+}

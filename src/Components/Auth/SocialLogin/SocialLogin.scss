@@ -1,0 +1,32 @@
+.social-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	border: 1px solid var(--Stroke, #f3f3f3);
+	background: var(--White, #fff);
+	padding: 18px;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background: #e9ecef;
+	}
+
+	img,
+	.img-fluid {
+		width: 24px;
+		height: 24px;
+		transition: filter 0.3s ease;
+	}
+
+	p {
+		margin-bottom: 0;
+		flex: 1;
+		text-align: center;
+		color: #0a0000;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+}

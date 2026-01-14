@@ -1,0 +1,30 @@
+.logout-modal {
+	gap: 20px;
+	&-circle {
+		border: 2px solid #ffeded;
+		background: #fff;
+		width: 140px;
+		height: 140px;
+		margin: 0 auto;
+		padding: 45px;
+		border-radius: 200px;
+		i {
+			font-size: 48px;
+			color: #e73232;
+		}
+	}
+	&-title {
+		color: #0a0000;
+		font-size: 22px;
+		font-weight: 600;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+	}
+	&-description {
+		color: #676666;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+	}
+}

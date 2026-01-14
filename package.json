@@ -1,0 +1,66 @@
+{
+	"name": "match-creators-website",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --host 0.0.0.0 --port 4001",
+		"build": "vite build",
+		"lint": "eslint --ignore-path .gitignore --ext .js --ext .jsx --ext .ts --ext .tsx .",
+		"format": "prettier --write \"**/*.+(js|jsx|ts|tsx)\"",
+		"preview": "vite preview",
+		"prepare": "husky install",
+		"serve": "serve"
+	},
+	"eslintConfig": {
+		"ignorePatterns": [
+			".eslintrc.json",
+			"vite.config.ts"
+		]
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^5.51.11",
+		"bootstrap": "^5.3.3",
+		"compressorjs": "^1.2.1",
+		"firebase": "^10.14.1",
+		"formik": "^2.4.6",
+		"html-react-parser": "^5.1.12",
+		"react": "^18.3.1",
+		"react-bootstrap": "^2.10.4",
+		"react-datepicker": "^7.3.0",
+		"react-device-detect": "^2.2.3",
+		"react-dom": "^18.3.1",
+		"react-helmet-async": "^2.0.5",
+		"react-hot-toast": "^2.4.1",
+		"react-infinite-scroll-component": "^6.1.0",
+		"react-otp-input": "^3.1.1",
+		"react-router-dom": "^6.24.0",
+		"react-select": "^5.8.0",
+		"react-simple-star-rating": "^5.1.7",
+		"react-slick": "^0.30.3",
+		"react-web-share": "^2.0.2",
+		"remixicon": "^4.3.0",
+		"slick-carousel": "^1.8.1",
+		"socket.io-client": "^4.8.0",
+		"vite-plugin-compression": "^0.5.1",
+		"yup": "^1.4.0",
+		"zustand": "^4.5.4"
+	},
+	"devDependencies": {
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@types/react-slick": "^0.23.13",
+		"@typescript-eslint/eslint-plugin": "^7.13.1",
+		"@typescript-eslint/parser": "^7.13.1",
+		"@vitejs/plugin-react": "^4.3.3",
+		"eslint": "^8.57.0",
+		"eslint-plugin-react-hooks": "^4.6.2",
+		"eslint-plugin-react-refresh": "^0.4.7",
+		"husky": "^9.1.0",
+		"lint-staged": "^15.2.7",
+		"prettier": "3.3.3",
+		"sass": "^1.77.6",
+		"typescript": "^5.2.2",
+		"vite": "^5.3.1"
+	}
+}

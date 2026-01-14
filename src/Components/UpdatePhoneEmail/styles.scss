@@ -1,0 +1,6 @@
+@use '../../styles/mixins.scss' as globalStyles;
+
+.modal-form{
+    @include globalStyles.form-style;
+	@include globalStyles.form-react-select;
+}

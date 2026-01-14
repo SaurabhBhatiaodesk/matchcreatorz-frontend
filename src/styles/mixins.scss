@@ -1,0 +1,538 @@
+@mixin common-box {
+	.common-card {
+		border-radius: 8px;
+		background: #fff;
+		padding: 20px;
+		gap: 20px;
+		border: 1px solid #f3f3f3;
+		transition: 0.5s;
+
+		&:hover {
+			box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+		}
+
+		.profile-img {
+			border-radius: 6px;
+			width: 76px;
+			height: 76px;
+			object-fit: cover;
+			border: 1px solid #f3f3f3;
+		}
+
+		.name {
+			color: #0a0000;
+			font-size: 18px;
+			font-weight: 600;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.designation {
+			color: #e73232;
+			font-size: 14px;
+			font-weight: 500;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.rating {
+			color: #0a0000;
+			font-size: 15px;
+			font-weight: 400;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+
+			i {
+				color: rgba(255, 153, 0, 1);
+				font-size: 20px;
+			}
+		}
+
+		.badges {
+			border-radius: 4px;
+			background: #ffeded;
+			padding: 5px 10px;
+			color: #0a0000;
+			font-size: 14px;
+			line-height: normal;
+
+			&-links {
+				color: #e73232;
+				font-size: 14px;
+				font-weight: 500;
+				text-decoration: none;
+				cursor: pointer;
+				font-family: 'Manrope', sans-serif;
+			}
+		}
+
+		.job-title {
+			color: #0a0000;
+			font-size: 18px;
+			font-weight: 600;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.job-description {
+			color: #676666;
+			font-size: 14px;
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.more-link {
+			color: #0a0000;
+			text-decoration: none;
+			font-size: 14px;
+			cursor: pointer;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.user-job-details {
+			span {
+				color: #0a0000;
+				font-size: 14px;
+				font-family: 'Manrope', sans-serif;
+
+				i {
+					margin-right: 5px;
+					font-size: 18px;
+				}
+			}
+		}
+
+		.primary-btn {
+			border-radius: 6px;
+			border: 1px solid #e73232;
+			background: #fff;
+			padding: 16px 40px;
+			color: #0a0000;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: normal;
+			width: 100%;
+			flex: 1;
+			font-family: 'Manrope', sans-serif;
+
+			&:hover {
+				background: #0a0000;
+				color: #fff;
+				border: 1px Solid #000;
+			}
+		}
+
+		.secondary-btn {
+			border-radius: 6px;
+			background: #e73232;
+			padding: 16px 40px;
+			width: 100%;
+			flex: 1;
+			transition: all 0.5s;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: normal;
+			color: #fff;
+			border: 1px solid #e73232;
+			font-family: 'Manrope', sans-serif;
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			&.disabled {
+				pointer-events: none;
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+@mixin tabs {
+	.nav-tabs {
+		border-bottom: none !important;
+		gap: 8px;
+
+		.nav-link {
+			padding: 16px 30px;
+			border-radius: 6px;
+			width: 100%;
+			color: var(--Title, #0a0000);
+			font-size: 16px;
+			font-weight: 600;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+			border: 2px solid transparent !important;
+
+			&.active {
+				border: 2px solid #e73232 !important;
+				background: #fff;
+				box-shadow: 0px 4px 34px 0px rgba(231, 50, 50, 0.12);
+			}
+
+			&:hover {
+				border: 2px solid #e73232;
+				color: #e73232;
+			}
+		}
+	}
+}
+
+@mixin form-react-select {
+	.form-react-select {
+		border-radius: 6px;
+		border: 1px solid #f3f3f3;
+		padding: 7.5px 28px;
+		background: #fff;
+
+		&.border-red {
+			border: 1px solid #e73232;
+		}
+
+		&__control {
+			border: 0px;
+			box-shadow: none;
+			background-color: transparent;
+			z-index: 1;
+			cursor: pointer;
+		}
+
+		&__input-container,
+		&__value-container {
+			padding: 0px;
+			&:focus-visible {
+				display: none;
+			}
+		}
+
+		&__indicator-separator {
+			display: none;
+		}
+
+		&__option {
+			&--is-selected {
+				background: transparent;
+				color: #0a0000;
+			}
+			&--is-focused {
+				background: #f4f4f4;
+				color: #0a0000;
+			}
+			&:active {
+				background: #f4f4f4;
+			}
+			&:hover {
+				background: #f4f4f4;
+				color: #0a0000;
+			}
+		}
+
+		&__menu {
+			left: 0px;
+			border: none;
+			min-width: 100px;
+			z-index: 9;
+			background: #fff;
+		}
+
+		&__single-value,
+		&__placeholder {
+			z-index: -1;
+			color: #0a0000;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		&.phone {
+			position: absolute;
+			top: 0.5rem;
+			left: 28px;
+			width: 90px;
+			padding: 0px;
+			border: 0px;
+			background: transparent;
+			&__indicator {
+				padding: 0px;
+				background: #fff;
+			}
+		}
+
+		&__indicator {
+			padding: 0px;
+		}
+	}
+}
+
+@mixin form-style {
+	.form-control,
+	.form-select {
+		border-radius: 6px;
+		border: 1px solid #f3f3f3;
+		padding: 16px 28px;
+		color: #0a0000;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+
+		&:focus {
+			box-shadow: none;
+		}
+
+		&:-webkit-autofill,
+		&:-webkit-autofill:focus {
+			transition:
+				background-color 600000s 0s,
+				color 600000s 0s;
+		}
+
+		&[data-autocompleted] {
+			background-color: transparent !important;
+		}
+
+		&.phone-padding {
+			padding-left: 125px;
+		}
+
+		&.border-red {
+			border: 1px solid #e73232;
+		}
+
+		&::placeholder {
+			color: #0a0000;
+		}
+	}
+
+	.form-label {
+		color: #676666;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	.form-check-label {
+		color: #676666;
+		font-size: 16px;
+		line-height: normal;
+		margin-left: 5px;
+		margin-top: 4px;
+		cursor: pointer;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	.form-check-input {
+		width: 22px;
+		height: 22px;
+		cursor: pointer;
+		border: 2px solid #767575;
+
+		&:checked {
+			background-color: #e73232;
+			border-color: #e73232;
+		}
+
+		&:focus {
+			box-shadow: none;
+			border-color: #e73232;
+		}
+	}
+}
+
+@mixin accordion {
+	.faq-accordion {
+		max-height: 30dvh;
+		overflow: hidden;
+		overflow-y: auto;
+		padding-right: 10px;
+
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: #e73232;
+			border-radius: 8px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: #ffeded;
+			border-radius: 8px;
+		}
+
+		.accordion-item {
+			border-radius: 0px;
+			border: 0px;
+			box-shadow: none;
+			margin-bottom: 30px;
+		}
+
+		.accordion-button {
+			background: transparent;
+			padding: 0px;
+			color: #0a0000;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+			margin-bottom: 10px;
+			box-shadow: none;
+
+			&:focus {
+				box-shadow: none;
+			}
+
+			&::after {
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z'%3E%3C/path%3E%3C/svg%3E");
+			}
+		}
+
+		.accordion-button:not(.collapsed)::after {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M5 11V13H19V11H5Z'%3E%3C/path%3E%3C/svg%3E");
+		}
+
+		.accordion-body {
+			padding: 0px;
+			color: #676666;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 24px;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+}
+
+@mixin custom-table {
+	.custom-table {
+		th {
+			background: transparent;
+			padding: 8px 28px;
+			color: #676666;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: normal;
+			border: 0px;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		td {
+			border: 0px;
+			box-shadow: none;
+			padding: 15px 28px;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: normal;
+			color: #0a0000;
+			white-space: nowrap;
+			font-family: 'Manrope', sans-serif;
+
+			&.date {
+				color: #676666;
+				font-weight: 400;
+				font-family: 'Manrope', sans-serif;
+			}
+
+			&.green-text {
+				color: #009154;
+				i {
+					font-size: 20px;
+				}
+			}
+
+			&.red-text {
+				color: #e73232;
+				i {
+					font-size: 20px;
+				}
+			}
+
+			&.lose {
+				color: #676666;
+			}
+
+			button {
+				font-size: 14px;
+				font-weight: 500;
+				line-height: normal;
+				border-radius: 6px;
+				padding: 6px 12px;
+				width: 100%;
+				max-width: 115px;
+				font-family: 'Manrope', sans-serif;
+
+				i {
+					font-size: 18px;
+				}
+			}
+
+			.approved {
+				background: #eafff6;
+				color: #009154;
+			}
+
+			.rejected {
+				background: #ffeded;
+				color: #e73232;
+			}
+
+			.pending {
+				background: #fff4e4;
+				color: #f90;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.common-card {
+		.primary-btn,
+		.secondary-btn {
+			font-size: 14px !important;
+			padding: 16px 20px !important;
+		}
+		.name,
+		.job-title {
+			font-size: 14px !important;
+		}
+	}
+
+	.nav-tabs {
+		.nav-link {
+			font-size: 14px !important;
+			padding: 12px 20px !important;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.nav-tabs {
+		.nav-link {
+			font-size: 14px !important;
+			padding: 12px 20px !important;
+		}
+	}
+
+	.common-card {
+		.primary-btn,
+		.secondary-btn {
+			font-size: 14px !important;
+			padding: 16px 20px !important;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.nav-tabs {
+		.nav-link {
+			font-size: 14px !important;
+			padding: 8px 10px !important;
+		}
+	}
+	.common-card {
+		.primary-btn,
+		.secondary-btn {
+			font-size: 14px !important;
+			padding: 16px 20px !important;
+		}
+	}
+}

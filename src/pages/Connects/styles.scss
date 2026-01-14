@@ -1,0 +1,89 @@
+@use '../../styles/mixins.scss' as globalStyles;
+
+.connect-section {
+	gap: 30px;
+
+	&-title {
+		color: #0a0000;
+		font-size: 26px;
+		font-weight: 800;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	&-amount {
+		border-radius: 8px;
+		background: #fff;
+		padding: 30px;
+
+		&.box {
+			width: 100%;
+			max-width: 280px;
+			gap: 20px;
+		}
+
+		.connect-icon {
+			border-radius: 200px;
+			border: 2px solid #ffeded;
+			width: 84px;
+			height: 84px;
+
+			i {
+				font-size: 30px;
+				color: #e73232;
+			}
+		}
+
+		.title {
+			color: #0a0000;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.amount {
+			color: #0a0000;
+			font-size: 26px;
+			font-weight: 800;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+		}
+
+		.btn {
+			border-radius: 6px;
+			background: #e73232;
+			padding: 16px 40px;
+			color: #fff;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: normal;
+			font-family: 'Manrope', sans-serif;
+
+			&:hover {
+				background: #0a0000;
+			}
+		}
+	}
+
+	.content-title {
+		color: #0a0000;
+		font-size: 22px;
+		font-weight: 700;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	@include globalStyles.tabs;
+	@include globalStyles.custom-table;
+}
+
+@media (max-width: 767px) {
+	.connect-section {
+		&-amount {
+			&.box {
+				max-width: 100%;
+			}
+		}
+	}
+}

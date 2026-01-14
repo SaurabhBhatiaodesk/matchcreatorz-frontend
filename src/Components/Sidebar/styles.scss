@@ -1,0 +1,113 @@
+.sidebar-section {
+	background: #fff;
+	padding-top: 30px;
+	width: 320px;
+	min-width: 320px;
+	max-width: 320px;
+	position: relative;
+	min-height: calc(100dvh - 100px);
+	&::before {
+		content: '';
+		background-image: url(/src/assets/images/bg-red-line.svg);
+		width: 100%;
+		height: 200px;
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		z-index: 1;
+		max-width: 320px;
+		margin: 0 auto;
+	}
+	&-profile {
+		z-index: 2;
+		padding-bottom: 30px;
+		img {
+			max-width: 100px;
+			height: 100px;
+			object-fit: cover;
+			border-radius: 100%;
+			border: 1px solid #e8e8e8;
+		}
+		p {
+			color: #0a0000;
+			font-size: 20px;
+			font-weight: 600;
+			line-height: normal;
+			margin-bottom: 0px;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+	&-wallet {
+		background: var(--Green, #009154);
+		padding: 20px;
+		span {
+			color: #fff;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: normal;
+			cursor: pointer;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+	&-connects {
+		.connects-content {
+			left: 20px;
+			transform: translateY(-50%);
+			span {
+				color: #fff;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: normal;
+				letter-spacing: 0.96px;
+				font-family: 'Manrope', sans-serif;
+			}
+			h6 {
+				color: #fff;
+				font-size: 35px;
+				font-weight: 800;
+				line-height: normal;
+				cursor: pointer;
+				font-family: 'Manrope', sans-serif;
+			}
+		}
+	}
+	&-tab-listing {
+		.items {
+			padding: 22px 40px;
+			color: #676666;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: normal;
+			cursor: pointer;
+			text-decoration: none;
+			border-left: 6px solid transparent;
+			font-family: 'Manrope', sans-serif;
+			i {
+				font-size: 24px;
+			}
+			&.active {
+				border-left: 6px solid #e73232;
+				i {
+					color: #e73232;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.sidebar-section {
+		width: 250px;
+		min-width: 250px;
+		max-width: 250px;
+	}
+}
+@media (max-width: 991px) {
+	.sidebar-section-tab-listing {
+		.items {
+			padding: 12px 20px;
+		}
+	}
+}

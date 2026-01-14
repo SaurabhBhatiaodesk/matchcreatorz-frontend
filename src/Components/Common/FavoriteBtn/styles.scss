@@ -1,0 +1,29 @@
+.heart-icon {
+	border-radius: 44px;
+	background: var(--White, #fff);
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	padding: 10px;
+	width: 40px;
+	height: 40px;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	i.fill {
+		color: rgba(231, 50, 50, 1);
+		font-size: 20px;
+	}
+
+	i.not-fill {
+		color: #0a0000;
+		font-size: 20px;
+	}
+	&.hover-shadow{
+		&:hover{
+		    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+		}
+	}
+	
+}

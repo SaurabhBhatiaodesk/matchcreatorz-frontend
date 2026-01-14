@@ -1,0 +1,131 @@
+.top-seller-card {
+	border-radius: 8px;
+	background: #fff;
+	padding: 20px;
+	position: relative;
+	max-width: 235px;
+	transition: 0.5s;
+	cursor: pointer;
+	&:hover {
+		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	}
+
+	&-img {
+		border-radius: 4px;
+		width: 200px;
+		margin-bottom: 20px;
+		height: 180px;
+		object-fit: cover;
+		border: 1px solid #f8f8f8;
+	}
+
+	.heart-icon {
+		border-radius: 44px;
+		background: #fff;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		padding: 10px;
+		width: 40px;
+		height: 40px;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+		i.fill {
+			color: rgba(231, 50, 50, 1);
+			font-size: 20px;
+		}
+
+		i.not-fill {
+			color: #0a0000;
+			font-size: 20px;
+		}
+	}
+
+	.title {
+		color: #0a0000;
+		font-size: 18px;
+		font-weight: 600;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	.rating {
+		color: #0a0000;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+
+		i {
+			color: rgba(255, 153, 0, 1);
+			font-size: 20px;
+		}
+	}
+
+	.badges {
+		border-radius: 4px;
+		background: #ffeded;
+		padding: 5px 8px;
+		color: #0a0000;
+		font-size: 14px;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+
+		&-links {
+			color: #e73232;
+			font-size: 14px;
+			font-weight: 500;
+			text-decoration: none;
+			cursor: pointer;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+	.top-seller-card {
+		max-width: 204px;
+		&-img {
+			width: 160px;
+			height: 160px;
+		}
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.top-seller {
+		justify-content: center;
+	}
+	.top-seller-card {
+		width: 100%;
+		max-width: 215px;
+		&-img {
+			width: 100%;
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.top-seller {
+		justify-content: center;
+	}
+	.top-seller-card {
+		width: 100%;
+		max-width: 210px;
+		&-img {
+			width: 100%;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.top-seller {
+		justify-content: center;
+	}
+	.top-seller-card {
+		width: 100%;
+		max-width: 100%;
+		&-img {
+			width: 100%;
+		}
+	}
+}

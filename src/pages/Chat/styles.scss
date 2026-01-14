@@ -1,0 +1,50 @@
+@use '../../styles/mixins.scss' as globalStyles;
+
+.chat-page-section {
+	@include globalStyles.tabs;
+	@include globalStyles.form-react-select;
+	.nav-tabs {
+		.nav-item {
+			width: 48%;
+		}
+
+		.nav-link {
+			padding: 16px 10px;
+		}
+	}
+
+	.chat-not-found {
+		border-radius: 10px;
+		padding: 20px;
+
+		img {
+			width: 100%;
+			max-width: 285px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.chat-page-section {
+		.chat-box {
+			&-user-name {
+				flex-direction: column;
+				gap: 1rem;
+			}
+
+			&-detail {
+				height: 400px;
+
+				.left-div {
+					&-content {
+						max-width: 100%;
+					}
+				}
+
+				.right-div {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}

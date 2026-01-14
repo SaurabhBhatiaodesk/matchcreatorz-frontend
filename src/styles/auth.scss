@@ -1,0 +1,526 @@
+@use './mixins.scss' as globalStyles;
+
+.auth-page {
+	background: #f9f9f9;
+	min-height: calc(100dvh - 100px);
+
+	&-card {
+		border-radius: 20px;
+		border: 4px solid #fff;
+		background: #fff;
+		box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.01);
+		padding: 60px;
+		width: 100%;
+		max-width: 540px;
+		margin: 60px 0px;
+		height: fit-content;
+		position: relative;
+		z-index: 2;
+		gap: 30px;
+
+		&::before {
+			content: '';
+			background-image: url(../assets/images/bg-red-line.svg);
+			width: 100%;
+			height: 250px;
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			background-size: cover;
+			transform: translate(-50%);
+			background-repeat: no-repeat;
+			z-index: -1;
+			max-width: 500px;
+			margin: 0 auto;
+		}
+
+		&.step {
+			max-width: 900px;
+		}
+	}
+
+	.auth-data-img {
+		width: 100%;
+		max-width: 400px;
+		margin: 0 auto;
+	}
+
+	&-main-title {
+		color: #0a0000;
+		text-align: center;
+		font-size: 26px;
+		font-weight: 800;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+		span {
+			color: #e73232;
+			span {
+				font-weight: 400;
+			}
+		}
+	}
+	&-card {
+		@include globalStyles.tabs;
+		.nav-item {
+			width: 49%;
+		}
+	}
+
+	&-img {
+		max-width: 120px;
+		margin: 0 auto;
+	}
+
+	&-link {
+		color: #e73232;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+		text-decoration: none;
+		cursor: pointer;
+		font-family: 'Manrope', sans-serif;
+
+		&:hover {
+			color: #000000;
+		}
+	}
+
+	&-cta {
+		border-radius: 6px;
+		background: #e73232;
+		padding: 16px 40px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+		border: none;
+		font-family: 'Manrope', sans-serif;
+
+		&:hover {
+			background: #000000;
+		}
+	}
+
+	&-text {
+		color: #676666;
+		font-size: 16px;
+		line-height: normal;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	.step-buttons {
+		border-radius: 6px;
+		padding: 16px 40px;
+		position: relative;
+
+		&-cta {
+			border-radius: 40px;
+			background: #676666;
+			width: 30px;
+			padding: 3px 10px;
+			height: 30px;
+			color: #fff;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 24px;
+			font-family: 'Manrope', sans-serif;
+
+			&.active {
+				background: #e73232;
+
+				span {
+					color: #e73232;
+				}
+			}
+
+			span {
+				color: #676666;
+			}
+		}
+
+		&:after {
+			border-top: 2px dashed #676666;
+			content: '';
+			position: absolute;
+			top: 30px;
+			left: 58px;
+			width: 100%;
+			max-width: 85%;
+			z-index: -1;
+		}
+	}
+
+	.step-one-screen {
+		img {
+			width: 100%;
+			max-width: 350px;
+			padding: 20px;
+			margin: 0 auto;
+		}
+		h2 {
+			color: #0a0000;
+			font-size: 25px;
+			font-weight: 600;
+			line-height: normal;
+			margin-bottom: 0px;
+			font-family: 'Manrope', sans-serif;
+		}
+		p {
+			color: #676666;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: normal;
+			margin-bottom: 0px;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+}
+.resume-input {
+	input[type='file'] {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	.spinner-border {
+		position: absolute;
+		right: 10px;
+		top: 12px;
+	}
+}
+.auth-form {
+	@include globalStyles.form-react-select;
+	@include globalStyles.form-style;
+
+	.terms-link {
+		color: var(--Title, #0a0000);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: normal;
+		text-decoration: none;
+		margin-top: 2px;
+		cursor: pointer;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	.eye-view {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+	}
+
+	.profile-image-card {
+		width: 100%;
+		max-width: 120px;
+		height: 120px;
+		margin: 0 auto 30px;
+		border-radius: 200px;
+		border: 1px solid#E73232;
+		background: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.profile-image {
+		border-radius: 200px;
+		padding: 10px;
+		width: 100%;
+		height: 120px;
+	}
+
+	.input--file {
+		position: absolute;
+		padding: 10px;
+		width: 40px;
+		height: 40px;
+		right: -18px;
+		top: 50%;
+		transform: translateY(-50%);
+		border-radius: 64px;
+		background: #e73232;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		span {
+			i {
+				color: #fff;
+				font-size: 20px;
+			}
+		}
+	}
+
+	.input--file input[type='file'] {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		opacity: 0;
+		width: 40px;
+		height: 40px;
+		padding: 0px;
+		cursor: pointer;
+	}
+
+	.opt-inputs {
+		margin-bottom: 10px;
+
+		div {
+			gap: 40px;
+		}
+
+		input {
+			width: 4rem !important;
+			height: 4rem;
+			border-radius: 8px;
+			border: 1px solid #cccccc;
+			background: #fff;
+			padding: 16px;
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+}
+
+.primary-btn {
+	border-radius: 6px;
+	border: 1px solid #e73232;
+	background: #fff;
+	padding: 16px 40px;
+	color: #0a0000;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: 'Manrope', sans-serif;
+	width: 100%;
+	max-width: 200px;
+
+	&:hover {
+		background: #0a0000;
+		color: #fff;
+		border: 1px Solid #000;
+	}
+
+	&.disabled {
+		pointer-events: none;
+		opacity: 0.5;
+	}
+}
+
+.secondary-btn {
+	border-radius: 6px;
+	background: #e73232;
+	padding: 16px 40px;
+	width: 100%;
+	max-width: 200px;
+	transition: all 0.5s;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: 'Manrope', sans-serif;
+	color: #fff;
+	border: 1px solid #e73232;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&.disabled {
+		opacity: 0.6;
+		pointer-events: none;
+	}
+}
+
+.transparent-btn {
+	border-radius: 6px;
+	width: 100%;
+	max-width: 200px;
+	padding: 16px 40px;
+	color: #0a0000;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: 'Manrope', sans-serif;
+	transition: all 0.5s;
+	background: transparent;
+
+	&:hover {
+		background: #0a0000;
+		color: #fff;
+	}
+}
+
+.mb-20 {
+	margin-bottom: 20px;
+}
+
+.faq-box {
+	border-radius: 8px;
+	border: 1px solid #f3f3f3;
+	padding: 30px;
+	gap: 30px;
+
+	&-heading {
+		color: #0a0000;
+		font-size: 22px;
+		font-weight: 700;
+		line-height: normal;
+		margin-bottom: 0px;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	&-add-btn {
+		border-radius: 6px;
+		background: #e73232;
+		padding: 8px 20px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+		border: 0px;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	@include globalStyles.accordion;
+}
+
+.portfolio-box {
+	padding: 30px;
+	gap: 30px;
+
+	&-heading {
+		color: #0a0000;
+		font-size: 22px;
+		font-weight: 700;
+		line-height: normal;
+		margin-bottom: 0px;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	&-add-btn {
+		border-radius: 6px;
+		background: #e73232;
+		padding: 8px 20px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+		border: 0px;
+		font-family: 'Manrope', sans-serif;
+	}
+
+	&-listing {
+		max-height: 70dvh;
+		overflow: hidden;
+		overflow-y: auto;
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: #e73232;
+			border-radius: 8px;
+		}
+		&::-webkit-scrollbar-track {
+			background: #ffeded;
+			border-radius: 8px;
+		}
+	}
+
+	&-display {
+		border-radius: 8px;
+		border: 1px solid #ededed;
+		background: #fff;
+		padding: 20px;
+		margin-bottom: 20px;
+
+		img {
+			width: 100%;
+			height: 180px;
+			object-fit: cover;
+		}
+
+		h3 {
+			color: #0a0000;
+			font-size: 18px;
+			font-weight: 600;
+			line-height: normal;
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			font-family: 'Manrope', sans-serif;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.auth-page {
+		&-card {
+			margin: 50px 16px;
+			padding: 16px;
+		}
+
+		.step-buttons {
+			&:after {
+				max-width: 81%;
+			}
+		}
+
+		&-tabs {
+			.nav-link {
+				padding: 16px 20px !important;
+				font-size: 14px !important;
+			}
+
+			.nav-item {
+				width: 48% !important;
+			}
+		}
+
+		.auth-form {
+			.form-check-label,
+			.form-control {
+				font-size: 14px;
+			}
+		}
+
+		&-link,
+		&-text {
+			font-size: 14px;
+		}
+	}
+
+	.auth-form {
+		.opt-inputs {
+			div {
+				gap: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 580px) {
+	.auth-page {
+		.step-buttons {
+			&:after {
+				max-width: 75%;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.auth-page {
+		.step-buttons {
+			&:after {
+				max-width: 65%;
+			}
+		}
+	}
+}
