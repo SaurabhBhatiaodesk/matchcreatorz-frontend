@@ -39,6 +39,8 @@ const PostJob: React.FC = () => {
 	const prevCountryIdRef = useRef(null);
 	const prevCategoryIdRef = useRef(null);
 
+	console.log('jobData:', jobData);
+
 	const payload = {
 		title: jobData?.title ?? '',
 		price: jobData?.price ?? '',

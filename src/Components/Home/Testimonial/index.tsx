@@ -4,14 +4,15 @@ import Slider from 'react-slick';
 import './styles.scss';
 
 const Testimonial = ({ data }: { data: any[] }) => {
+	const hasMultiple = data.length > 1;
 	const settings = {
-		dots: true,
-		infinite: true,
+		dots: hasMultiple,
+		infinite: hasMultiple,
 		speed: 500,
-		autoplay: true,
+		autoplay: hasMultiple,
 		autoplaySpeed: 5000,
 		pauseOnHover: true,
-		slidesToShow: 2,
+		slidesToShow: hasMultiple ? 2 : 1,
 		slidesToScroll: 1,
 		responsive: [
 			{
@@ -22,7 +23,6 @@ const Testimonial = ({ data }: { data: any[] }) => {
 			},
 		],
 	};
-
 	return (
 		<>
 			<div className="d-flex flex-column gap-2 mb-30">

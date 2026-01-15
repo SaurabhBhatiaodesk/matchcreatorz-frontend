@@ -1,10 +1,11 @@
 @use '../../styles/mixins.scss' as globalStyles;
 
 .profile-section {
+	gap: 30px;
 	@include globalStyles.tabs;
 	@include globalStyles.form-style;
 	@include globalStyles.form-react-select;
-	gap: 30px;
+	
 
 	.read-only {
 		background: #fef0f0;
