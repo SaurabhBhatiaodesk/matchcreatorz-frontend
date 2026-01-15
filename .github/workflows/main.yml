@@ -11,60 +11,10 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      # 1️⃣ Checkout
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2️⃣ Info
-      - name: Deployment Started
-        run: |
-          echo "🚀 Frontend deployment started at $(date)"
-          echo "Repository: ${{ github.repository }}"
-          echo "Branch: ${{ github.ref_name }}"
-          echo "Commit: ${{ github.sha }}"
-
-      # 3️⃣ Node setup
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.19.1'
-          cache: 'npm'
-
-      # 4️⃣ Install deps
-      - name: Install dependencies
-        run: |
-          echo "📦 Installing frontend dependencies..."
-          npm ci
-          echo "✅ Dependencies installed"
-
-      # 5️⃣ Build (NO ENV TOUCH)
-      - name: Build frontend (Vite)
-        run: |
-          echo "🔨 Building frontend"
-          npm run build
-          echo "✅ Frontend build completed"
-        env:
-          NODE_ENV: production
-
-      # 6️⃣ Cleanup local
-      - name: Cleanup before deploy
-        run: |
-          rm -rf node_modules .git
-          echo "🧹 Cleanup done"
-
-      # 7️⃣ Fix permissions on server
-      - name: Fix remote permissions
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY_LIVE }}
-          script: |
-            sudo chown -R ${{ secrets.SERVER_USER }}:${{ secrets.SERVER_USER }} /home/ubuntu/Matchcreators-Frontend/
-            sudo chmod -R 755 /home/ubuntu/Matchcreators-Frontend/
-
-      # 8️⃣ Deploy (IMPORTANT PART)
-      - name: Deploy frontend via Rsync
+      - name: Deploy frontend via Rsync (NO BUILD)
         uses: easingthemes/ssh-deploy@main
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY_LIVE }}
@@ -76,11 +26,8 @@ jobs:
             --exclude=node_modules
             --exclude=.git
             --exclude=.env
-          BEFORE_RSYNC: echo "🚀 Deploying frontend..."
-          AFTER_RSYNC: echo "✅ Frontend deployed successfully"
 
-      # 9️⃣ Restart frontend
-      - name: Restart frontend (PM2)
+      - name: Build & Restart on Server
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SERVER_IP }}
@@ -88,18 +35,8 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY_LIVE }}
           script: |
             cd /home/ubuntu/Matchcreators-Frontend/
+            npm ci
+            npm run build
             pm2 reload matchcreators-frontend-admin || \
             pm2 start "npm run preview" --name matchcreators-frontend-admin
             pm2 save
-            echo "✅ Frontend restarted"
-
-      # 🔟 Health check
-      - name: Health check
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY_LIVE }}
-          script: |
-            pm2 status
-            echo "🎉 Frontend deployment completed at $(date)"
