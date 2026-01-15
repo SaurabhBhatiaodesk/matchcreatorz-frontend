@@ -11,9 +11,11 @@ jobs:
     timeout-minutes: 20
 
     steps:
+      # 1️⃣ Checkout
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # 2️⃣ Info
       - name: Deployment Started
         run: |
           echo "🚀 Frontend deployment started at $(date)"
@@ -21,18 +23,21 @@ jobs:
           echo "Branch: ${{ github.ref_name }}"
           echo "Commit: ${{ github.sha }}"
 
+      # 3️⃣ Node setup
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.19.1'
           cache: 'npm'
 
+      # 4️⃣ Install deps
       - name: Install dependencies
         run: |
           echo "📦 Installing frontend dependencies..."
           npm ci
           echo "✅ Dependencies installed"
 
+      # 5️⃣ Build (NO ENV TOUCH)
       - name: Build frontend (Vite)
         run: |
           echo "🔨 Building frontend"
@@ -41,11 +46,13 @@ jobs:
         env:
           NODE_ENV: production
 
+      # 6️⃣ Cleanup local
       - name: Cleanup before deploy
         run: |
           rm -rf node_modules .git
           echo "🧹 Cleanup done"
 
+      # 7️⃣ Fix permissions on server
       - name: Fix remote permissions
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -56,6 +63,7 @@ jobs:
             sudo chown -R ${{ secrets.SERVER_USER }}:${{ secrets.SERVER_USER }} /home/ubuntu/Matchcreators-Frontend/
             sudo chmod -R 755 /home/ubuntu/Matchcreators-Frontend/
 
+      # 8️⃣ Deploy (IMPORTANT PART)
       - name: Deploy frontend via Rsync
         uses: easingthemes/ssh-deploy@main
         with:
@@ -63,10 +71,15 @@ jobs:
           REMOTE_HOST: ${{ secrets.SERVER_IP }}
           REMOTE_USER: ${{ secrets.SERVER_USER }}
           TARGET: /home/ubuntu/Matchcreators-Frontend/
-          ARGS: "-rlgoDzvc --delete --exclude=node_modules --exclude=.git"
+          ARGS: >
+            -rlgoDzvc --delete
+            --exclude=node_modules
+            --exclude=.git
+            --exclude=.env
           BEFORE_RSYNC: echo "🚀 Deploying frontend..."
-          AFTER_RSYNC: echo "✅ Frontend deployed"
+          AFTER_RSYNC: echo "✅ Frontend deployed successfully"
 
+      # 9️⃣ Restart frontend
       - name: Restart frontend (PM2)
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -80,6 +93,7 @@ jobs:
             pm2 save
             echo "✅ Frontend restarted"
 
+      # 🔟 Health check
       - name: Health check
         uses: appleboy/ssh-action@v1.2.0
         with:
